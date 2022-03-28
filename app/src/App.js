@@ -2,7 +2,10 @@ import { useState, useEffect } from "react"
 
 import { getRequest } from "./clients/ApiClient"
 
+import Layout from "./components/Layout"
 import Companies from "./components/Companies"
+import Loading from "./components/Loading"
+import ErrorMessage from "./components/ErrorMessage"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -35,15 +38,15 @@ const App = () => {
   }, [])
 
   return (
-    <div>
+    <Layout>
       { isLoading ? (
-        <div>Loading companies...</div>
+        <Loading />
       ) : errorMessage ? (
-        <div>{ errorMessage }</div>
+        <ErrorMessage>{ errorMessage }</ErrorMessage>
       ) : (
         <Companies companies={companies} />
       ) }
-    </div>
+    </Layout>
   )
 }
 

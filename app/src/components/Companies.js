@@ -1,4 +1,12 @@
 import { useState, useEffect } from "react"
+import { 
+  Col,
+  Row,
+  Form,
+  ListGroup,
+  Card,
+  Badge
+} from 'react-bootstrap';
 
 const getUniqueSpecialities = (companies) => {
   return [...new Set(companies.reduce((specialities, company) => {
@@ -46,10 +54,13 @@ const Companies = ({ companies }) => {
   const filteredCompanies = getFilteredCompanies(companies, selectedSpecialities, searchInName)
 
   return (
-      <div>
-        <div>
-          <div>
-            <input
+      <Row>
+        <Col sm={4}>
+          <div className="mb-4">
+            <p>
+              <strong>Type to filter</strong>
+            </p>
+            <Form.Control
               type="search"
               onChange={(e) => {
                 setSearchInName(e.target.value)
@@ -57,32 +68,56 @@ const Companies = ({ companies }) => {
               value={searchInName}
             />
           </div>
-          <ul>
+          <p>
+            <strong>Check to filter</strong>
+          </p>
+          <ListGroup>
             { specialities.map((speciality, i) => {
               const isSelected = selectedSpecialities.includes(speciality)
 
               return (
-                <li key={i}>
-                  <input
-                    type="checkbox"
+                <ListGroup.Item key={i}>
+                  <Form.Check
                     id={ `speciality-${i}` }
                     checked={ isSelected }
+                    label={ speciality }
                     onChange={ () => isSelected ? unselectSpeciality(speciality) : selectSpeciality(speciality) }
                   />
-                  <label htmlFor={ `speciality-${i}` }>{ speciality }</label>
-                </li>
+                </ListGroup.Item>
               )
             }) }
-          </ul>
-        </div>
-        <div>
-          { filteredCompanies.map((company, i) => (
-            <div key={ i }>
-              { JSON.stringify(company) }
-            </div>
-          )) }
-        </div>
-      </div>
+          </ListGroup>
+        </Col>
+        <Col sm={8}>
+          <h2 className="mb-3">Companies</h2>
+          <Row>
+            { filteredCompanies.map((company, i) => (
+              <Col sm={4} className="mb-4">
+                <Card>
+                  <Card.Img variant="top" src={ company.logo } />
+                  <Card.Body>
+                    <Card.Title>{ company.name }</Card.Title>
+                    <Card.Text>
+                      <p>
+                        <strong>City:</strong>{ " " }
+                        { company.city }
+                      </p>
+                      <p>
+                        <strong>Specialities:</strong><br />
+                        { company.specialities.map((speciality, i) => (
+                            <Badge className="me-1" bg="light" text="dark" key={ i }>
+                              { speciality }
+                            </Badge>
+                        )) }
+                      </p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            )) }
+          </Row>
+        </Col>
+      </Row>
   )
 }
 
