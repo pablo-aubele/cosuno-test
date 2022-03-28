@@ -16,7 +16,8 @@ on the root folder
 ## Notes
 
 - The boilerplate code generator "Create React App" was used for the frontend, together with React Bootstrap.
-- The backend uses a simple Express App. For some reason, the Docker setup is not running `npm install` internally, so, instead of spending the time trying to debug it, I decided to add the `cd api && npm i && cd ..` workaround above
+- The backend uses a simple Express App. For some reason, the Docker setup is not running `npm install` internally, so, instead of spending the time trying to debug it, I decided to add the `cd api && npm i && cd ..` workaround above.
+- To save time, I cloned the docker-compose.yml file from an old project, so, my apologies if it becomes too apparent.
 
 ## Potential for improvement:
 Part of the task is to make a list of ideas on how I would improve this application if I had more time
