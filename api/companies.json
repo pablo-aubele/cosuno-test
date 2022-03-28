@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Cosuno GmbH",
+        "logo": "https://placekitten.com/408/287",
+        "city": "Berlin",
+        "specialities": ["Excavation", "Plumbing", "Electrical", "Masonry"]
+    },
+    {
+        "name": "Nakamura SE",
+        "logo": "https://placekitten.com/408/287",
+        "city": "Hamburg",
+        "specialities": ["Foundation", "Electrical", "Masonry"]
+    },
+    {
+        "name": "Mustermann GmbH",
+        "logo": "https://placekitten.com/408/287",
+        "city": "München",
+        "specialities": ["Renovations", "Plumbing", "Demolition"]
+    },
+    {
+        "name": "Aubele AG",
+        "logo": "https://placekitten.com/408/287",
+        "city": "Berlin",
+        "specialities": ["Plumbing", "Demolition", "Electrical", "Masonry"]
+    },
+    {
+        "name": "Ziegelsteiner AG",
+        "logo": "https://placekitten.com/408/287",
+        "city": "Berlin",
+        "specialities": ["Excavation", "Electrical", "Demolition"]
+    },
+    {
+        "name": "Müller GmbH",
+        "logo": "https://placekitten.com/408/287",
+        "city": "Köln",
+        "specialities": ["Excavation", "Renovations", "Masonry"]
+    },
+    {
+        "name": "Achilees AG",
+        "logo": "https://placekitten.com/408/287",
+        "city": "Flensburg",
+        "specialities": ["Excavation", "Electrical", "Masonry"]
+    },
+    {
+        "name": "Saturn Bautechnik AG",
+        "logo": "https://placekitten.com/408/287",
+        "city": "Hamburg",
+        "specialities": ["Plumbing", "Masonry"]
+    }
+]
