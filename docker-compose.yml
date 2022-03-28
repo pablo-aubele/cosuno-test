@@ -23,3 +23,4 @@ services:
       - API_URL=${API_HOST}:${API_PORT}
     volumes:
       - ./api:/usr/src/app
+      - '/app/node_modules'
